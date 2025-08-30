@@ -11,8 +11,12 @@ var can_move := true
 var facing_right := true
 
 func _physics_process(delta):
-	if Input.is_action_pressed("fish"):
-		can_move = false
+	# Check if fishing rod is actively fishing (going down or returning up)
+	var is_fishing = fishing_rod.going_down or fishing_rod.returning_up
+	
+	# Player can move when not actively fishing
+	can_move = not is_fishing
+	
 	# Get the input direction and handle the movement/deceleration.
 	if can_move:
 		var direction = Input.get_axis("ui_left", "ui_right")
