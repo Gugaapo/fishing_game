@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://eji6itgxjv8m"]
+[gd_scene load_steps=12 format=3 uid="uid://eji6itgxjv8m"]
 
 [ext_resource type="Texture2D" uid="uid://bqkhs3315fnkt" path="res://assets/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_BookPageLeft01a.png" id="1_8eaxj"]
 [ext_resource type="Texture2D" uid="uid://b8a36i4jg4fhj" path="res://assets/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Slot01a.png" id="2_0xfm7"]
@@ -6,9 +6,15 @@
 [ext_resource type="FontFile" uid="uid://clkjta5vgibng" path="res://assets/fonts/Terminal-Grotesque-master/terminal-grotesque.ttf" id="3_hrxv2"]
 [ext_resource type="Texture2D" uid="uid://iisxxbq8b8ek" path="res://assets/sprites/eventos/StrongTide.png" id="4_nrrao"]
 [ext_resource type="Texture2D" uid="uid://bflynl8xmfq8p" path="res://assets/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Bar01a.png" id="5_37idj"]
-[ext_resource type="Texture2D" uid="uid://dnqc4nq6x6fqt" path="res://assets/fantasy_pixelart_ui/sliders/silver_grabber_pressed.png" id="5_e1e7c"]
-[ext_resource type="Texture2D" uid="uid://c6mre0hjtet54" path="res://assets/fantasy_pixelart_ui/sliders/gold_grabber_pressed.png" id="6_40ldy"]
+[ext_resource type="Texture2D" uid="uid://crp6aghxupmtx" path="res://assets/sprites/PaperUI.png" id="5_58p1c"]
+[ext_resource type="Texture2D" uid="uid://dbo5e2i8fsoev" path="res://assets/fantasy_pixelart_ui/sliders/silver_slider_empty.png" id="5_v18j5"]
 [ext_resource type="Texture2D" uid="uid://bv2gxwejh4rbb" path="res://assets/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Frame01a.png" id="6_43ibd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eji48"]
+texture = ExtResource("3_1dede")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hqb2q"]
+texture = ExtResource("5_v18j5")
 
 [node name="Root" type="Control"]
 layout_mode = 3
@@ -19,7 +25,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Base" type="TextureRect" parent="Inner"]
+[node name="Baseplate" type="TextureRect" parent="Inner"]
 layout_mode = 0
 offset_left = 1.0
 offset_right = 105.0
@@ -27,7 +33,7 @@ offset_bottom = 147.0
 texture = ExtResource("1_8eaxj")
 expand_mode = 1
 
-[node name="Meio" type="Control" parent="Inner/Base"]
+[node name="Meio" type="Control" parent="Inner/Baseplate"]
 layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -36,7 +42,7 @@ offset_top = 10.0
 offset_right = -5.0
 offset_bottom = -86.0
 
-[node name="InnerBackground" type="TextureRect" parent="Inner/Base/Meio"]
+[node name="InnerBackground" type="TextureRect" parent="Inner/Baseplate/Meio"]
 self_modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 1
 anchors_preset = -1
@@ -48,7 +54,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_0xfm7")
 
-[node name="Botão_Embaixo" type="Control" parent="Inner/Base/Meio/InnerBackground"]
+[node name="Botão_Embaixo" type="Control" parent="Inner/Baseplate/Meio/InnerBackground"]
 layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -59,60 +65,36 @@ offset_bottom = -5.068
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Inner/Base/Meio/InnerBackground/Botão_Embaixo"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.932
-anchor_bottom = 0.808
+[node name="SailButton" type="Button" parent="Inner/Baseplate/Meio/InnerBackground/Botão_Embaixo"]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 0
 offset_left = 25.0
-offset_top = 9.0
-offset_right = -9.152
-offset_bottom = -1.008
-texture = ExtResource("3_1dede")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="Inner/Base/Meio/InnerBackground/Botão_Embaixo/TextureRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = 2.0
-offset_right = -3.0
-offset_bottom = -1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.758192, 0.758192, 0.758192, 1)
-theme_override_fonts/font = ExtResource("3_hrxv2")
-theme_override_font_sizes/font_size = 6
-text = "SAIL HERE"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Icone_moldura" type="TextureRect" parent="Inner/Base/Meio/InnerBackground"]
-layout_mode = 0
-offset_left = 29.0
 offset_top = 8.0
-offset_right = 64.0
-offset_bottom = 40.0
-texture = ExtResource("5_e1e7c")
+offset_right = 71.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("3_hrxv2")
+theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxTexture_eji48")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hqb2q")
+text = "Sail here"
 
-[node name="moldura_interna" type="TextureRect" parent="Inner/Base/Meio/InnerBackground/Icone_moldura"]
+[node name="Icon_frame" type="TextureRect" parent="Inner/Baseplate/Meio/InnerBackground"]
 layout_mode = 0
-offset_top = 2.0
-offset_right = 35.0
-offset_bottom = 29.0
-texture = ExtResource("6_40ldy")
+offset_left = 26.0
+offset_top = 10.0
+offset_right = 61.0
+offset_bottom = 42.0
+texture = ExtResource("5_58p1c")
 
-[node name="TextureRect" type="TextureRect" parent="Inner/Base/Meio/InnerBackground/Icone_moldura"]
+[node name="Icon" type="TextureRect" parent="Inner/Baseplate/Meio/InnerBackground/Icon_frame"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 6.0
-offset_right = 26.0
-offset_bottom = 23.0
+offset_left = 9.0
+offset_top = 4.0
+offset_right = 30.0
+offset_bottom = 26.0
 texture = ExtResource("4_nrrao")
 
-[node name="Label" type="Label" parent="Inner/Base/Meio/InnerBackground"]
+[node name="Event_text" type="Label" parent="Inner/Baseplate/Meio/InnerBackground"]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 47.0
@@ -122,19 +104,28 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_hrxv2")
 theme_override_font_sizes/font_size = 5
 text = "Shiver me Timbers!
-A gigantic storm approaches in the horizon. You are left alone to fight it!
-
-- Harder to catch fish"
+A gigantic storm approaches in the horizon. You are left alone to fight against it!"
 autowrap_mode = 3
 
-[node name="Top" type="TextureRect" parent="Inner/Base"]
+[node name="Event_explanation" type="Label" parent="Inner/Baseplate/Meio/InnerBackground"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 87.0
+offset_right = 85.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_hrxv2")
+theme_override_font_sizes/font_size = 5
+text = "- Harder to catch fish"
+
+[node name="TopDecoration" type="TextureRect" parent="Inner/Baseplate"]
 layout_mode = 0
 offset_left = -1.0
 offset_right = 106.0
 offset_bottom = 6.0
 texture = ExtResource("5_37idj")
 
-[node name="Title" type="TextureRect" parent="."]
+[node name="TitleImage" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 22.0
 offset_top = -6.0
@@ -142,7 +133,7 @@ offset_right = 84.0
 offset_bottom = 12.0
 texture = ExtResource("6_43ibd")
 
-[node name="Label" type="Label" parent="Title"]
+[node name="TitleText" type="Label" parent="TitleImage"]
 layout_mode = 0
 offset_right = 62.0
 offset_bottom = 18.0
