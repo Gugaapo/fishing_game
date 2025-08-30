@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfd2yhkg7texu"]
+[gd_scene load_steps=11 format=3 uid="uid://cfd2yhkg7texu"]
 
 [ext_resource type="Texture2D" uid="uid://bfyc7ntifu2f7" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_xpaf7"]
 [ext_resource type="Script" path="res://scripts/fishing_scripts/FishSpawner.gd" id="2_n6o05"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cdnqtebfupj62" path="res://scenes/fishing_scene/boat.tscn" id="4_8rwe7"]
 [ext_resource type="Texture2D" uid="uid://c57ixg36kb8qw" path="res://assets/gradients/gradient.png" id="5_2m4ej"]
 [ext_resource type="PackedScene" path="res://scenes/fishing_scene/fishes/fish_sardine.tscn" id="6_sardine"]
+[ext_resource type="AudioStream" uid="uid://i0ajtculjn50" path="res://assets/music/Music_Theme1.wav" id="7_73ynf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ttqpa"]
 distance = -11.0
@@ -181,6 +182,10 @@ area_size = Vector2(300, 200)
 [node name="boat" parent="." instance=ExtResource("4_8rwe7")]
 
 [node name="gradient" type="Sprite2D" parent="."]
-position = Vector2(3, 144.75)
+position = Vector2(-2, 145)
 scale = Vector2(0.37375, 0.239583)
 texture = ExtResource("5_2m4ej")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_73ynf")
+autoplay = true
