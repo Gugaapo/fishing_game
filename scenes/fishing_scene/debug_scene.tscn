@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://drxp8nd3ekn8p" path="res://scenes/fishing_scene/fishes/fish_baiacu.tscn" id="3_23wvb"]
 [ext_resource type="PackedScene" uid="uid://cdnqtebfupj62" path="res://scenes/fishing_scene/boat.tscn" id="4_8rwe7"]
 [ext_resource type="Texture2D" uid="uid://c57ixg36kb8qw" path="res://assets/gradients/gradient.png" id="5_2m4ej"]
-[ext_resource type="PackedScene" uid="uid://crdq6akw18ghm" path="res://scenes/fishing_scene/fishes/fish_sardine.tscn" id="6_sardine"]
+[ext_resource type="PackedScene" uid="uid://lpitcdo7x83b" path="res://scenes/fishing_scene/fishes/fish_sardine.tscn" id="6_sardine"]
 [ext_resource type="AudioStream" uid="uid://i0ajtculjn50" path="res://assets/music/Music_Theme1.wav" id="7_73ynf"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ttqpa"]
