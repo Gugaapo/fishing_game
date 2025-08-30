@@ -16,6 +16,3 @@ catch_ui_control_path = NodePath("CatchUI")
 shape = SubResource("CircleShape2D_0qoas")
 
 [node name="CatchUI" parent="." instance=ExtResource("2_dr64r")]
-fade_delay = 1.0
-fade_time = 0.6
-float_up_px = 24.0

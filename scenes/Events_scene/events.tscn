@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c23ulfs4cnfhe"]
+
+[ext_resource type="Texture2D" uid="uid://bxfu7j2rg5g1i" path="res://assets/sprites/MapaPathBase.png" id="1_d7p07"]
+
+[node name="Events" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(1.44, 1)
+texture = ExtResource("1_d7p07")
+
+[node name="Camera2D" type="Camera2D" parent="."]
