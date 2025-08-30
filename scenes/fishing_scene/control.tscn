@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://8xuld255yqqr"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.878
+offset_right = 1111.0
+offset_bottom = 601.88
+alignment = 1
+
+[node name="ButtonPath1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonPath2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ButtonPath3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
