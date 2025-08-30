@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfd2yhkg7texu"]
+[gd_scene load_steps=10 format=3 uid="uid://cfd2yhkg7texu"]
 
 [ext_resource type="Texture2D" uid="uid://bfyc7ntifu2f7" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_xpaf7"]
 [ext_resource type="Script" path="res://scripts/fishing_scripts/FishSpawner.gd" id="2_n6o05"]
 [ext_resource type="PackedScene" uid="uid://drxp8nd3ekn8p" path="res://scenes/fishing_scene/fishes/fish_baiacu.tscn" id="3_23wvb"]
-[ext_resource type="PackedScene" uid="uid://sardine_fish_uid" path="res://scenes/fishing_scene/fishes/fish_sardine.tscn" id="6_sardine"]
 [ext_resource type="PackedScene" uid="uid://cdnqtebfupj62" path="res://scenes/fishing_scene/boat.tscn" id="4_8rwe7"]
 [ext_resource type="Texture2D" uid="uid://c57ixg36kb8qw" path="res://assets/gradients/gradient.png" id="5_2m4ej"]
+[ext_resource type="PackedScene" path="res://scenes/fishing_scene/fishes/fish_sardine.tscn" id="6_sardine"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ttqpa"]
 distance = -11.0
@@ -173,7 +173,7 @@ color = Color(0.752941, 1, 1, 1)
 [node name="FishSpawner" type="Node2D" parent="."]
 position = Vector2(-1, 131)
 script = ExtResource("2_n6o05")
-fish_scenes = [ExtResource("3_23wvb"), ExtResource("6_sardine")]
+fish_scenes = Array[PackedScene]([ExtResource("3_23wvb"), ExtResource("6_sardine")])
 spawn_weights = [2.0, 1.0]
 count = 15
 area_size = Vector2(300, 200)

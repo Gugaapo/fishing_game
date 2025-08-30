@@ -11,6 +11,7 @@ extends Node2D
 @export var line_color: Color = Color.WHITE
 @export var line_width: float = 2.0
 
+@export var catch_ui_control_path : NodePath
 # Signal emitted when a fish is caught
 signal fish_caught(fish_value: int, fish_name: String)
 
@@ -24,6 +25,7 @@ var total_points: int = 0  # Track total points earned
 @onready var hitbox: Area2D = $Hitbox
 @onready var rod_tip_node: Node2D = get_node_or_null(rod_tip_path) as Node2D if rod_tip_path != NodePath() else null
 @onready var spawn_local_position_node: Node2D = get_node_or_null(spawn_local_position_path)
+@onready var catch_ui_control: CatchUIControl = get_node_or_null(catch_ui_control_path)
 
 # preload the sounds
 var catch_sounds := [
@@ -144,6 +146,7 @@ func on_hit_fish(fish: Node):
 	# Check if the fish should be caught based on its catch chance
 	if fish.has_method("should_be_caught") and fish.should_be_caught():
 		# Fish was caught - add to caught fish array
+		catch_ui_control.show_catch()
 		going_down = false
 		returning_up = true
 		caught_fish.append(fish)  # Add fish to the array
@@ -151,6 +154,7 @@ func on_hit_fish(fish: Node):
 			fish.bite(self)
 		print("Fish %s successfully caught!" % fish.name)
 	else:
+		catch_ui_control.show_miss()
 		# Fish escaped - make it flee to the sides
 		if fish.has_method("escape_from_rod"):
 			fish.escape_from_rod()

@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://draq76bcaspjl"]
+
+[ext_resource type="Script" path="res://scripts/UI_scricpts/catch_labels.gd" id="1_3boon"]
+[ext_resource type="FontFile" uid="uid://bkww1rwwspsr3" path="res://assets/fonts/Terminal-Grotesque-master/terminal-grotesque_open.otf" id="1_50vyl"]
+
+[node name="CatchUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3boon")
+
+[node name="MissLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.733333, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.682353, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_50vyl")
+theme_override_font_sizes/font_size = 23
+text = "MISS"
+
+[node name="HitLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.779291, 0.779291, 0.779291, 1)
+theme_override_colors/font_shadow_color = Color(0.74558, 0.74558, 0.74558, 1)
+theme_override_fonts/font = ExtResource("1_50vyl")
+theme_override_font_sizes/font_size = 21
+text = "CATCH"
