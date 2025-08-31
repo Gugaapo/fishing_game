@@ -173,7 +173,7 @@ text = "volcano"
 shape = SubResource("WorldBoundaryShape2D_gykbv")
 
 [node name="TileMap" type="TileMap" parent="."]
-modulate = Color(1, 0, 0, 0.403922)
+modulate = Color(1, 0, 0, 0.415686)
 z_index = 1
 tile_set = SubResource("TileSet_2an01")
 format = 2
@@ -199,6 +199,7 @@ area_size = Vector2(300, 200)
 [node name="boat" parent="." instance=ExtResource("6_t8ki5")]
 
 [node name="gradient" type="Sprite2D" parent="."]
+modulate = Color(1, 0.517647, 0.498039, 1)
 position = Vector2(-2, 145)
 scale = Vector2(0.37375, 0.239583)
 texture = ExtResource("7_d2dr8")
