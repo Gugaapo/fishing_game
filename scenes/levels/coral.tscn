@@ -181,6 +181,7 @@ layer_0/tile_data = PackedInt32Array(65518, 262144, 9, 65519, 262144, 9, 65520, 
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = -473.0
 offset_top = -175.0
 offset_right = 420.0

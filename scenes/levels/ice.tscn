@@ -182,6 +182,7 @@ layer_0/tile_data = PackedInt32Array(65518, 262144, 9, 65519, 262144, 9, 65520, 
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = -473.0
 offset_top = -175.0
 offset_right = 420.0
@@ -199,6 +200,7 @@ area_size = Vector2(300, 200)
 [node name="boat" parent="." instance=ExtResource("6_fc1wi")]
 
 [node name="gradient" type="Sprite2D" parent="."]
+modulate = Color(0.839216, 1, 1, 1)
 position = Vector2(-2, 145)
 scale = Vector2(0.37375, 0.239583)
 texture = ExtResource("7_27brl")
