@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://scripts/Globals.gd"
-EventDB="*res://scripts/event_scripts/EventDB.gd"
+EventDB="*res://scenes/Events_scene/EventDB.tscn"
 
 [display]
 

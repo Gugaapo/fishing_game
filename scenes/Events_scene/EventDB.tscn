@@ -1,0 +1,16 @@
+[gd_scene load_steps=9 format=3 uid="uid://purual4us7vd"]
+
+[ext_resource type="Script" path="res://scripts/event_scripts/EventDB.gd" id="1_870gb"]
+[ext_resource type="Resource" uid="uid://bq8375enrv0ip" path="res://events_data/downwind.tres" id="2_ypgj4"]
+[ext_resource type="Resource" uid="uid://bia3pnyv87hg4" path="res://events_data/payment.tres" id="3_o313g"]
+[ext_resource type="Resource" uid="uid://divf2bwo61dfy" path="res://events_data/shoal.tres" id="4_rcayg"]
+[ext_resource type="Resource" uid="uid://c5dyrmxknppgg" path="res://events_data/storm.tres" id="5_38ce1"]
+[ext_resource type="Resource" uid="uid://cxsysu8wc6ung" path="res://events_data/strong_tide.tres" id="6_14f0x"]
+[ext_resource type="Resource" uid="uid://drun5wi2n1lda" path="res://events_data/treasure.tres" id="7_j2ia5"]
+[ext_resource type="Resource" uid="uid://dnlkmcbavwmw7" path="res://events_data/unknown.tres" id="8_7p13j"]
+
+[node name="EventDb" type="Node2D"]
+script = ExtResource("1_870gb")
+
+[node name="Preloader" type="ResourcePreloader" parent="."]
+resources = [PackedStringArray("downwind", "payment", "shoal", "storm", "strong_tide", "treasure", "unknown"), [ExtResource("2_ypgj4"), ExtResource("3_o313g"), ExtResource("4_rcayg"), ExtResource("5_38ce1"), ExtResource("6_14f0x"), ExtResource("7_j2ia5"), ExtResource("8_7p13j")]]
