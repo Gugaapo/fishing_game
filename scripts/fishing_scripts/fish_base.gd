@@ -111,8 +111,17 @@ func _process(delta: float):
 			return
 	
 	if biting and is_instance_valid(target_rod):
-		global_position = target_rod.global_position + bite_offset
-		rotation = +PI / 2
+		# Adjust bite offset and rotation based on fish direction
+		var adjusted_bite_offset = bite_offset
+		var adjusted_rotation = -PI / 2
+		
+		if dir < 0:  # Fish was moving left
+			# Flip the bite offset horizontally and adjust rotation
+			adjusted_bite_offset.x = -bite_offset.x
+			adjusted_rotation = +PI / 2
+		
+		global_position = target_rod.global_position + adjusted_bite_offset
+		rotation = adjusted_rotation
 		return
 	else:
 		rotation = 0
