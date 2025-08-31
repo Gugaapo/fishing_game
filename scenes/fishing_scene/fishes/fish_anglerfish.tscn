@@ -1,3 +1,44 @@
-[gd_scene format=3 uid="uid://dvh2r78wa5ial"]
+[gd_scene load_steps=7 format=3 uid="uid://ddt53s3nxevem"]
 
-[node name="FishEspadim" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://b0o3oaadfaw0w" path="res://assets/sprites/anglerfish_spritesheet.png" id="1_60ox8"]
+[ext_resource type="Script" path="res://scripts/fishing_scripts/fish_anglerfish.gd" id="1_g1i2u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocxyi"]
+atlas = ExtResource("1_60ox8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsrwp"]
+atlas = ExtResource("1_60ox8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oqeec"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocxyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsrwp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_28775"]
+radius = 11.0
+
+[node name="FishAnglerfish" type="Node2D"]
+script = ExtResource("1_g1i2u")
+draw_hitbox = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_oqeec")
+autoplay = "default"
+
+[node name="Hitbox" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Hitbox"]
+position = Vector2(-11, 3)
+shape = SubResource("CircleShape2D_28775")

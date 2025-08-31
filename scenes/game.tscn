@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_script"]
 [ext_resource type="PackedScene" uid="uid://cdnqtebfupj62" path="res://scenes/fishing_scene/boat.tscn" id="2_boat"]
-[ext_resource type="PackedScene" uid="uid://bqxvhqxqxqxqx" path="res://scenes/pause_menu.tscn" id="3_pause"]
-
 [node name="Game" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -12,9 +10,3 @@ anchor_bottom = 1.0
 script = ExtResource("1_script")
 
 [node name="FishingScene" parent="." instance=ExtResource("1_boat")]
-
-[node name="PauseMenu" parent="." instance=ExtResource("3_pause")]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0

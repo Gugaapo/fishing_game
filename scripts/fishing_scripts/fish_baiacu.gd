@@ -9,5 +9,5 @@ func _ready():
 	lifetime = 35.0  # Baiacu fish stay on screen longer (35 seconds)
 	catch_chance = 0.5  # Baiacu fish have 50% catch chance (harder to catch)
 	flee_duration = 4.0  # Baiacu fish fade out in 4 seconds (slower, more dramatic)
-	
+	draw_hitbox = true
 	super._ready()
