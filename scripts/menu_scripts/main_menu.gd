@@ -10,7 +10,7 @@ func _ready():
 
 func _on_start_pressed():
 	# Change to events scene
-	get_tree().change_scene_to_file("res://scenes/Events_scene/events.tscn")
+	get_tree().change_scene_to_file("res://scenes/map.tscn")
 
 func _on_events_pressed():
 	# Change to events scene

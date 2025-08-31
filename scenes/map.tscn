@@ -1,19 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://bmhhcw7wjro4l"]
 
 [ext_resource type="Script" path="res://scenes/map_controller.gd" id="1_0j483"]
-[ext_resource type="Texture2D" uid="uid://bi2l766vg2mml" path="res://assets/sprites/mapa.png" id="1_fu6xe"]
 [ext_resource type="Texture2D" uid="uid://bbh4ryk1mi3u6" path="res://assets/sprites/barco-grande.png" id="2_33n60"]
+[ext_resource type="Texture2D" uid="uid://buirb5qfqk2yd" path="res://assets/sprites/Atlas.png" id="3_hn4lp"]
 [ext_resource type="PackedScene" uid="uid://c21t1t84okty6" path="res://scenes/UI_scenes/money_display.tscn" id="4_1n1qu"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_0j483")
 boat_positions = Array[Vector2]([Vector2(-403, 200), Vector2(-375, -268), Vector2(412, -258), Vector2(-13, 260), Vector2(492, 216)])
-
-[node name="map_sprite" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-1.17842, 0.499983)
-scale = Vector2(1.11552, 1.11552)
-texture = ExtResource("1_fu6xe")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -36,7 +30,7 @@ offset_top = -324.0
 offset_right = 576.0
 offset_bottom = 301.0
 scale = Vector2(1, 1.03744)
-texture = ExtResource("1_fu6xe")
+texture = ExtResource("3_hn4lp")
 
 [node name="TutorialButton" type="Button" parent="Interface/TextureRect"]
 layout_mode = 0
