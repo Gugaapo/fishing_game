@@ -201,8 +201,4 @@ texture = ExtResource("6_2m4ej")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_73ynf")
-<<<<<<< HEAD
 autoplay = true
-=======
-autoplay = true
->>>>>>> 6ba810cde4db78601dd6e311e1484c856edcc5ac

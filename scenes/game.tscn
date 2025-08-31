@@ -2,10 +2,6 @@
 
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_script"]
 [ext_resource type="PackedScene" uid="uid://cdnqtebfupj62" path="res://scenes/fishing_scene/boat.tscn" id="2_boat"]
-<<<<<<< HEAD
-
-=======
->>>>>>> 6ba810cde4db78601dd6e311e1484c856edcc5ac
 [node name="Game" type="Control"]
 layout_mode = 3
 anchors_preset = 15
