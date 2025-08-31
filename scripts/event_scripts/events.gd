@@ -1,7 +1,11 @@
 extends Node2D
 
 @export var search_roots: Array[Node]
-@export var scene_path: String = "res://scenes/fishing_scene/debug_scene.tscn"
+@export var beach_path: String = "res://scenes/levels/beach.tscn"
+@export var ice_path: String = "res://scenes/levels/ice.tscn"
+@export var volcano_path: String = "res://scenes/levels/volcano.tscn"
+@export var coral_path: String = "res://scenes/levels/coral.tscn"
+@export var abyss_path: String = "res://scenes/levels/abyss.tscn"
 
 var eventNames: Array[String] = [
 	"The Downwind",
@@ -63,5 +67,31 @@ func _find_event_panel(n: Node) -> EventPanel:
 	return null
 
 func _on_sail_button_pressed() -> void:
-	print("Loading:", scene_path, " | Event:", Globals.current_event)
-	get_tree().change_scene_to_file(scene_path)
+	var lvl := Globals.current_level
+	var lvl_path : String
+	match lvl:
+		"beach":
+			lvl_path = beach_path
+			print("Level is beach")
+			# do beach-specific logic here
+		"ice":
+			lvl_path = ice_path
+			print("Level is ice")
+			# do ice-specific logic here
+		"volcano":
+			lvl_path = volcano_path
+			print("Level is volcano")
+			# do volcano-specific logic here
+		"coral":
+			lvl_path = coral_path
+			print("Level is coral")
+			# do coral-specific logic here
+		"abyss":
+			lvl_path = abyss_path
+			print("Level is abyss")
+			# do abyss-specific logic here
+		_:
+			lvl_path = beach_path
+			print("Unknown level:", lvl)
+	print("Loading:", lvl_path, " | Event:", Globals.current_event)
+	get_tree().change_scene_to_file(lvl_path)

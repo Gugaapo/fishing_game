@@ -13,7 +13,7 @@ func _ready():
 	$Interface/TextureRect/AbyssButton.mouse_entered.connect(func(): _on_button_hover(4))
 
 	# Click connections (each sends its key)
-	_connect_click($Interface/TextureRect/TutorialButton, "tutorial")
+	_connect_click($Interface/TextureRect/TutorialButton, "beach")
 	_connect_click($Interface/TextureRect/IceButton, "ice")
 	_connect_click($Interface/TextureRect/HeatButton, "volcano")
 	_connect_click($Interface/TextureRect/CoraisButton, "coral")
