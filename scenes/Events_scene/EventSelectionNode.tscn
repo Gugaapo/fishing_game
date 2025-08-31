@@ -41,12 +41,15 @@ expand_mode = 1
 
 [node name="Meio" type="Control" parent="Inner/Baseplate"]
 layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 5.0
 offset_top = 10.0
 offset_right = -5.0
 offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="InnerBackground" type="TextureRect" parent="Inner/Baseplate/Meio"]
 self_modulate = Color(1, 1, 1, 0.498039)
@@ -62,6 +65,7 @@ texture = ExtResource("2_0xfm7")
 
 [node name="Botão_Embaixo" type="Control" parent="Inner/Baseplate/Meio/InnerBackground"]
 layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -2.0

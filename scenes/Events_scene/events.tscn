@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c23ulfs4cnfhe"]
+[gd_scene load_steps=5 format=3 uid="uid://c23ulfs4cnfhe"]
 
 [ext_resource type="Texture2D" uid="uid://bxfu7j2rg5g1i" path="res://assets/sprites/MapaPathBase.png" id="1_d7p07"]
 [ext_resource type="Script" path="res://scripts/event_scripts/events.gd" id="1_qsv4e"]
 [ext_resource type="PackedScene" uid="uid://eji6itgxjv8m" path="res://scenes/Events_scene/EventSelectionNode.tscn" id="3_8x6dj"]
+[ext_resource type="PackedScene" path="res://scenes/pause_menu.tscn" id="4_pause"]
 
 [node name="Events" type="Node2D" node_paths=PackedStringArray("search_roots")]
 script = ExtResource("1_qsv4e")
@@ -35,3 +36,12 @@ offset_top = -218.0
 offset_right = 196.0
 offset_bottom = -218.0
 scale = Vector2(3.12398, 3.12398)
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_pause")]
+layout_mode = 1
+offset_left = 70.0
+offset_top = 44.0
+offset_right = 70.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2

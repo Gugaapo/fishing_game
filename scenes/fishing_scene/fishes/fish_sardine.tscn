@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://crdq6akw18ghm"]
+[gd_scene load_steps=9 format=3 uid="uid://lpitcdo7x83b"]
 
 [ext_resource type="Script" path="res://scripts/fishing_scripts/fish_sardine.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://1qjgaiywyyqh" path="res://assets/sprites/peixes.png" id="2_texture"]
@@ -45,7 +45,6 @@ radius = 6.0
 [node name="Sardine" type="Node2D"]
 z_index = 2
 script = ExtResource("1_script")
-speed = 60.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_36fei")
