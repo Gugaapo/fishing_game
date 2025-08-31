@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bdiusbl1svca8" path="res://scenes/fishing_scene/fishes/fish_espadim.tscn" id="5_a2u1f"]
 [ext_resource type="PackedScene" uid="uid://cdnqtebfupj62" path="res://scenes/fishing_scene/boat.tscn" id="6_kilog"]
 [ext_resource type="Texture2D" uid="uid://c57ixg36kb8qw" path="res://assets/gradients/gradient.png" id="7_3jlgq"]
-[ext_resource type="AudioStream" uid="uid://i0ajtculjn50" path="res://assets/music/Music_Theme1.wav" id="8_nu8jo"]
 [ext_resource type="PackedScene" uid="uid://c21t1t84okty6" path="res://scenes/UI_scenes/money_display.tscn" id="9_se7x2"]
+[ext_resource type="AudioStream" uid="uid://b4m282wbaaxem" path="res://assets/music/MusicTheme2_CoralSea.wav" id="10_ory0c"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fdkpb"]
 distance = -11.0
@@ -181,6 +181,7 @@ layer_0/tile_data = PackedInt32Array(65518, 262144, 9, 65519, 262144, 9, 65520, 
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -1
+layout_mode = 0
 offset_left = -473.0
 offset_top = -175.0
 offset_right = 420.0
@@ -203,7 +204,7 @@ scale = Vector2(0.37375, 0.239583)
 texture = ExtResource("7_3jlgq")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_nu8jo")
+stream = ExtResource("10_ory0c")
 autoplay = true
 
 [node name="MoneyDisplay" parent="." instance=ExtResource("9_se7x2")]
