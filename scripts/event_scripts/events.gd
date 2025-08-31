@@ -68,31 +68,17 @@ func _find_event_panel(n: Node) -> EventPanel:
 	return null
 
 func _on_sail_button_pressed() -> void:
+	# optional tiny delay to let SFX start
+	await get_tree().process_frame
+	await get_tree().create_timer(0.12).timeout
+
 	var lvl := Globals.current_level
-	var lvl_path : String
+	var lvl_path: String
 	match lvl:
-		"beach":
-			lvl_path = beach_path
-			print("Level is beach")
-			# do beach-specific logic here
-		"ice":
-			lvl_path = ice_path
-			print("Level is ice")
-			# do ice-specific logic here
-		"volcano":
-			lvl_path = volcano_path
-			print("Level is volcano")
-			# do volcano-specific logic here
-		"coral":
-			lvl_path = coral_path
-			print("Level is coral")
-			# do coral-specific logic here
-		"abyss":
-			lvl_path = abyss_path
-			print("Level is abyss")
-			# do abyss-specific logic here
-		_:
-			lvl_path = beach_path
-			print("Unknown level:", lvl)
-	print("Loading:", lvl_path, " | Event:", Globals.current_event)
+		"beach":   lvl_path = beach_path
+		"ice":     lvl_path = ice_path
+		"volcano": lvl_path = volcano_path
+		"coral":   lvl_path = coral_path
+		"abyss":   lvl_path = abyss_path
+		_:         lvl_path = beach_path
 	get_tree().change_scene_to_file(lvl_path)

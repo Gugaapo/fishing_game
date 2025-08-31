@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://eji6itgxjv8m"]
+[gd_scene load_steps=14 format=3 uid="uid://eji6itgxjv8m"]
 
 [ext_resource type="Texture2D" uid="uid://bqkhs3315fnkt" path="res://assets/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_BookPageLeft01a.png" id="1_8eaxj"]
 [ext_resource type="Script" path="res://scripts/event_scripts/EventSelectionNode.gd" id="1_bwcu8"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://crp6aghxupmtx" path="res://assets/sprites/PaperUI.png" id="5_58p1c"]
 [ext_resource type="Texture2D" uid="uid://dbo5e2i8fsoev" path="res://assets/fantasy_pixelart_ui/sliders/silver_slider_empty.png" id="5_v18j5"]
 [ext_resource type="Texture2D" uid="uid://bv2gxwejh4rbb" path="res://assets/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Frame01a.png" id="6_43ibd"]
+[ext_resource type="AudioStream" uid="uid://cospfqyy1csub" path="res://assets/sfx/sfx_UIButton1.wav" id="7_g0yrr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eji48"]
 texture = ExtResource("3_1dede")
@@ -88,6 +89,9 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_eji48")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_hqb2q")
 text = "Sail here"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Inner/Baseplate/Meio/InnerBackground/Botão_Embaixo/SailButton"]
+stream = ExtResource("7_g0yrr")
+
 [node name="Icon_frame" type="TextureRect" parent="Inner/Baseplate/Meio/InnerBackground"]
 layout_mode = 0
 offset_left = 26.0
@@ -154,3 +158,5 @@ theme_override_font_sizes/font_size = 9
 text = "The Strong Tide"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="Inner/Baseplate/Meio/InnerBackground/Botão_Embaixo/SailButton" to="Inner/Baseplate/Meio/InnerBackground/Botão_Embaixo/SailButton/AudioStreamPlayer2D" method="play"]
