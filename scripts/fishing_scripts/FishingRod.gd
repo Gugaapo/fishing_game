@@ -20,7 +20,6 @@ var returning_up := false
 var spawn_position: Vector2
 var player: Node2D
 var caught_fish: Array[Node] = []  # Array to hold multiple caught fish
-var total_points: int = 0  # Track total points earned
 
 @onready var hitbox: Area2D = $Hitbox
 @onready var rod_tip_node: Node2D = get_node_or_null(rod_tip_path) as Node2D if rod_tip_path != NodePath() else null
@@ -107,11 +106,10 @@ func _process(delta: float):
 							print("Destroying caught fish: %s" % fish.name)
 				
 				# Update total points and emit signal
-				total_points += total_caught_points
+				Globals.money += total_caught_points
 				var fish_list = ", ".join(caught_fish_names)
-				fish_caught.emit(total_caught_points, fish_list)
-				print("Caught %d fish: %s! +%d points. Total: %d" % [caught_fish.size(), fish_list, total_caught_points, total_points])
-				
+				fish_caught.emit(total_caught_points, fish_list)  # keep the same signal payload
+				print("Caught %d fish: %s! +%d money. Balance: %d" % [caught_fish.size(), fish_list, total_caught_points, Globals.money])
 				# Clear the caught fish array
 				caught_fish.clear()
 			
@@ -169,17 +167,17 @@ func on_hit_fish(fish: Node):
 
 # Function to get total points earned
 func get_total_points() -> int:
-	return total_points
+	return Globals.money
 
 # Function to reset total points
 func reset_points():
-	total_points = 0
-	print("Points reset to 0")
+	Globals.money = 0
+	print("Money reset to 0")
 
 # Function to add bonus points
 func add_bonus_points(bonus: int):
-	total_points += bonus
-	print("Bonus points! +%d. Total: %d" % [bonus, total_points])
+	Globals.money += bonus
+	print("Bonus! +%d. Balance: %d" % [bonus, Globals.money])
 
 # Function to get number of currently caught fish
 func get_caught_fish_count() -> int:
