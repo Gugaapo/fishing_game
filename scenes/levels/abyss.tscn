@@ -199,7 +199,7 @@ area_size = Vector2(300, 200)
 [node name="boat" parent="." instance=ExtResource("7_8hjxw")]
 
 [node name="gradient" type="Sprite2D" parent="."]
-modulate = Color(0.185569, 6.73831e-06, 0.793252, 1)
+modulate = Color(0.329412, 0.054902, 0.792157, 1)
 position = Vector2(-2, 145)
 scale = Vector2(0.37375, 0.239583)
 texture = ExtResource("8_xrc45")

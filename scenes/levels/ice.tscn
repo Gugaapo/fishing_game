@@ -174,7 +174,7 @@ text = "ice
 shape = SubResource("WorldBoundaryShape2D_sv0v7")
 
 [node name="TileMap" type="TileMap" parent="."]
-modulate = Color(0.141176, 0.870588, 1, 0.505882)
+modulate = Color(0.141176, 0.643137, 1, 0.54902)
 z_index = 1
 tile_set = SubResource("TileSet_ng38j")
 format = 2
@@ -200,7 +200,7 @@ area_size = Vector2(300, 200)
 [node name="boat" parent="." instance=ExtResource("6_fc1wi")]
 
 [node name="gradient" type="Sprite2D" parent="."]
-modulate = Color(0.839216, 1, 1, 1)
+modulate = Color(0, 1, 1, 1)
 position = Vector2(-2, 145)
 scale = Vector2(0.37375, 0.239583)
 texture = ExtResource("7_27brl")

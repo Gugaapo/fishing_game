@@ -173,7 +173,7 @@ text = "coral"
 shape = SubResource("WorldBoundaryShape2D_fdkpb")
 
 [node name="TileMap" type="TileMap" parent="."]
-modulate = Color(1, 0.662745, 1, 0.462745)
+modulate = Color(0, 1, 1, 0.52549)
 z_index = 1
 tile_set = SubResource("TileSet_d8pb4")
 format = 2
@@ -199,6 +199,8 @@ area_size = Vector2(300, 200)
 [node name="boat" parent="." instance=ExtResource("6_kilog")]
 
 [node name="gradient" type="Sprite2D" parent="."]
+modulate = Color(1, 0.270588, 1, 1)
+self_modulate = Color(0.788235, 1, 1, 1)
 position = Vector2(-2, 145)
 scale = Vector2(0.37375, 0.239583)
 texture = ExtResource("7_3jlgq")
