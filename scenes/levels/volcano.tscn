@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbkfj3hecotsf"]
+[gd_scene load_steps=15 format=3 uid="uid://dbkfj3hecotsf"]
 
 [ext_resource type="Texture2D" uid="uid://bfyc7ntifu2f7" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_di743"]
 [ext_resource type="Script" path="res://scripts/fishing_scripts/FishSpawner.gd" id="1_e345p"]
+[ext_resource type="Script" path="res://scripts/fishing_scripts/debug_scene_controller.gd" id="1_uyodm"]
 [ext_resource type="PackedScene" uid="uid://b0p1j4pm1s36b" path="res://scenes/fishing_scene/fishes/fish_baiacu.tscn" id="2_mmvsc"]
 [ext_resource type="PackedScene" uid="uid://lpitcdo7x83b" path="res://scenes/fishing_scene/fishes/fish_sardine.tscn" id="3_5g3t4"]
 [ext_resource type="PackedScene" uid="uid://ddt53s3nxevem" path="res://scenes/fishing_scene/fishes/fish_anglerfish.tscn" id="4_viqay"]
@@ -147,7 +148,10 @@ texture = ExtResource("1_di743")
 [sub_resource type="TileSet" id="TileSet_2an01"]
 sources/0 = SubResource("TileSetAtlasSource_rda3g")
 
-[node name="Volcano" type="Node2D"]
+[node name="Volcano" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_uyodm")
 
 [node name="GameContent" type="Node2D" parent="."]
 
@@ -202,10 +206,10 @@ texture = ExtResource("7_d2dr8")
 stream = ExtResource("8_ebhjt")
 autoplay = true
 
-[node name="MoneyDisplay" parent="." node_paths=PackedStringArray("moneyLabel") instance=ExtResource("9_f3cmu")]
+[node name="MoneyDisplay" parent="." instance=ExtResource("9_f3cmu")]
+layout_mode = 1
 offset_left = -277.0
 offset_top = -48.0
 offset_right = -277.0
 offset_bottom = -48.0
 scale = Vector2(0.639153, 0.639153)
-moneyLabel = NodePath("")

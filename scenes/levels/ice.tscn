@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bt742ue5pssp7"]
+[gd_scene load_steps=15 format=3 uid="uid://bt742ue5pssp7"]
 
 [ext_resource type="Script" path="res://scripts/fishing_scripts/FishSpawner.gd" id="1_2o6tv"]
 [ext_resource type="Texture2D" uid="uid://bfyc7ntifu2f7" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_n08hq"]
+[ext_resource type="Script" path="res://scripts/fishing_scripts/debug_scene_controller.gd" id="1_vjtpi"]
 [ext_resource type="PackedScene" uid="uid://b0p1j4pm1s36b" path="res://scenes/fishing_scene/fishes/fish_baiacu.tscn" id="2_0366x"]
 [ext_resource type="PackedScene" uid="uid://lpitcdo7x83b" path="res://scenes/fishing_scene/fishes/fish_sardine.tscn" id="3_kyuk1"]
 [ext_resource type="PackedScene" uid="uid://ddt53s3nxevem" path="res://scenes/fishing_scene/fishes/fish_anglerfish.tscn" id="4_5cvw4"]
@@ -147,7 +148,10 @@ texture = ExtResource("1_n08hq")
 [sub_resource type="TileSet" id="TileSet_ng38j"]
 sources/0 = SubResource("TileSetAtlasSource_f7oo0")
 
-[node name="Ice" type="Node2D"]
+[node name="Ice" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vjtpi")
 
 [node name="GameContent" type="Node2D" parent="."]
 
@@ -188,7 +192,7 @@ color = Color(0.752941, 1, 1, 1)
 position = Vector2(-1, 131)
 script = ExtResource("1_2o6tv")
 fish_scenes = Array[PackedScene]([ExtResource("2_0366x"), ExtResource("3_kyuk1"), ExtResource("4_5cvw4"), ExtResource("5_ohxkw")])
-spawn_weights = [1.0, 1.0, 1.0, 1.0]
+spawn_weights = [0.25, 0.25, 1.0, 0.1]
 count = 15
 area_size = Vector2(300, 200)
 
@@ -203,10 +207,10 @@ texture = ExtResource("7_27brl")
 stream = ExtResource("8_441gs")
 autoplay = true
 
-[node name="MoneyDisplay" parent="." node_paths=PackedStringArray("moneyLabel") instance=ExtResource("9_d27g4")]
+[node name="MoneyDisplay" parent="." instance=ExtResource("9_d27g4")]
+layout_mode = 1
 offset_left = -277.0
 offset_top = -48.0
 offset_right = -277.0
 offset_bottom = -48.0
 scale = Vector2(0.639153, 0.639153)
-moneyLabel = NodePath("")

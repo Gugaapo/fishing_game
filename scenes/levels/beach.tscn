@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://1rlr2xspluxq"]
+[gd_scene load_steps=15 format=3 uid="uid://1rlr2xspluxq"]
 
 [ext_resource type="Texture2D" uid="uid://bfyc7ntifu2f7" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_5klfv"]
+[ext_resource type="Script" path="res://scripts/fishing_scripts/debug_scene_controller.gd" id="1_fp3jj"]
 [ext_resource type="Script" path="res://scripts/fishing_scripts/FishSpawner.gd" id="1_r6scy"]
 [ext_resource type="PackedScene" uid="uid://b0p1j4pm1s36b" path="res://scenes/fishing_scene/fishes/fish_baiacu.tscn" id="2_k5kpx"]
 [ext_resource type="PackedScene" uid="uid://lpitcdo7x83b" path="res://scenes/fishing_scene/fishes/fish_sardine.tscn" id="3_7s85j"]
@@ -147,7 +148,10 @@ texture = ExtResource("1_5klfv")
 [sub_resource type="TileSet" id="TileSet_y3aan"]
 sources/0 = SubResource("TileSetAtlasSource_pygva")
 
-[node name="Beach" type="Node2D"]
+[node name="Beach" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fp3jj")
 
 [node name="GameContent" type="Node2D" parent="."]
 
@@ -187,7 +191,7 @@ layer_0/tile_data = PackedInt32Array(65518, 262144, 9, 65519, 262144, 9, 65520, 
 position = Vector2(-1, 131)
 script = ExtResource("1_r6scy")
 fish_scenes = Array[PackedScene]([ExtResource("2_k5kpx"), ExtResource("3_7s85j"), ExtResource("4_2uaw2"), ExtResource("5_ctmwe")])
-spawn_weights = [1.0, 1.0, 1.0, 1.0]
+spawn_weights = [0.5, 1.0, 0.0, 0.1]
 count = 15
 area_size = Vector2(300, 200)
 
@@ -202,10 +206,10 @@ texture = ExtResource("7_mgnb3")
 stream = ExtResource("8_uor8n")
 autoplay = true
 
-[node name="MoneyDisplay" parent="." node_paths=PackedStringArray("moneyLabel") instance=ExtResource("9_y47uv")]
+[node name="MoneyDisplay" parent="." instance=ExtResource("9_y47uv")]
+layout_mode = 1
 offset_left = -277.0
 offset_top = -48.0
 offset_right = -277.0
 offset_bottom = -48.0
 scale = Vector2(0.639153, 0.639153)
-moneyLabel = NodePath("")
