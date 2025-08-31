@@ -13,7 +13,8 @@ var eventNames: Array[String] = [
 	"The Shoal",
 	"The Storm",
 	"The Strong Tide",
-	"The Treasure"
+	"The Treasure",
+	"???"
 ]
 
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
