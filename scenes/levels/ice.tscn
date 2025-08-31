@@ -193,7 +193,7 @@ color = Color(0.752941, 1, 1, 1)
 position = Vector2(-1, 131)
 script = ExtResource("1_2o6tv")
 fish_scenes = Array[PackedScene]([ExtResource("2_0366x"), ExtResource("3_kyuk1"), ExtResource("4_5cvw4"), ExtResource("5_ohxkw")])
-spawn_weights = [0.25, 0.25, 1.0, 0.1]
+spawn_weights = [0.25, 0.25, 0.1, 1.0]
 count = 15
 area_size = Vector2(300, 200)
 
