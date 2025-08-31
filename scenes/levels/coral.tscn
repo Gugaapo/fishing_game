@@ -169,7 +169,7 @@ text = "coral"
 shape = SubResource("WorldBoundaryShape2D_fdkpb")
 
 [node name="TileMap" type="TileMap" parent="."]
-modulate = Color(1, 1, 1, 0.462745)
+modulate = Color(1, 0.662745, 1, 0.462745)
 z_index = 1
 tile_set = SubResource("TileSet_d8pb4")
 format = 2
