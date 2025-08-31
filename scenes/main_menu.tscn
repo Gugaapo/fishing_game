@@ -1,21 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqxvhqxqxqxqx"]
+[gd_scene load_steps=2 format=3 uid="uid://bqxvhqxqxqxqx"]
 
 [ext_resource type="Script" path="res://scripts/menu_scripts/main_menu.gd" id="1_0x0x0"]
-[ext_resource type="Theme" uid="uid://bqxvhqxqxqxqx" path="res://assets/fantasy_pixelart_ui/theme.tres" id="2_0x0x0"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_0x0x0")
-theme = ExtResource("2_0x0x0")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.2, 0.4, 0.8, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -29,6 +31,8 @@ offset_left = -100.0
 offset_top = -100.0
 offset_right = 100.0
 offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2

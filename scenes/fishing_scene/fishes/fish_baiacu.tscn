@@ -1,3 +1,56 @@
-[gd_scene format=3 uid="uid://bmyu20jeonx3a"]
+[gd_scene load_steps=9 format=3 uid="uid://b0p1j4pm1s36b"]
 
-[node name="FishEspadim" type="Node2D"]
+[ext_resource type="Script" path="res://scripts/fishing_scripts/fish_baiacu.gd" id="1_cu4ym"]
+[ext_resource type="Texture2D" uid="uid://1qjgaiywyyqh" path="res://assets/sprites/peixes.png" id="1_h8mfj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjuyn"]
+atlas = ExtResource("1_h8mfj")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljk8o"]
+atlas = ExtResource("1_h8mfj")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok4j0"]
+atlas = ExtResource("1_h8mfj")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urxuk"]
+atlas = ExtResource("1_h8mfj")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_760vg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjuyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljk8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok4j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urxuk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8m1w3"]
+
+[node name="FishBaiacu" type="Node2D"]
+script = ExtResource("1_cu4ym")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
+sprite_frames = SubResource("SpriteFrames_760vg")
+autoplay = "default"
+
+[node name="Hitbox" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Hitbox"]
+position = Vector2(-11, 4)
+shape = SubResource("CircleShape2D_8m1w3")
