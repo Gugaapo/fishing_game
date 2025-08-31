@@ -169,7 +169,7 @@ position = Vector2(-2, -8)
 shape = SubResource("WorldBoundaryShape2D_g56bj")
 
 [node name="TileMap" type="TileMap" parent="."]
-modulate = Color(1, 1, 1, 0.462745)
+modulate = Color(0, 0, 0.258824, 0.768627)
 z_index = 1
 tile_set = SubResource("TileSet_1oh0u")
 format = 2

@@ -170,7 +170,7 @@ text = "ice
 shape = SubResource("WorldBoundaryShape2D_sv0v7")
 
 [node name="TileMap" type="TileMap" parent="."]
-modulate = Color(1, 1, 1, 0.462745)
+modulate = Color(0.141176, 0.870588, 1, 0.505882)
 z_index = 1
 tile_set = SubResource("TileSet_ng38j")
 format = 2
