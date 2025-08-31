@@ -46,23 +46,28 @@ func transition_to_level():
 	var current_level = Globals.current_level
 	print("Transitioning to level: ", current_level)
 	
-	# Define the scene paths for each level
-	var level_scenes = {
-		"ice": "res://scenes/levels/ice.tscn",
-		"beach": "res://scenes/levels/beach.tscn",
-		"coral": "res://scenes/levels/coral.tscn",
-		"volcano": "res://scenes/levels/volcano.tscn",
-		"abyss": "res://scenes/levels/abyss.tscn"
-	}
-	
-	# Check if the current level exists in our mapping
-	if level_scenes.has(current_level):
-		var scene_path = level_scenes[current_level]
-		print("Loading scene: ", scene_path)
+	# Check current level and transition to appropriate scene
+	if Globals.current_level == "ice":
+		print("Going to ice scene")
+		get_tree().change_scene_to_file("res://scenes/levels/ice.tscn")
 		
-		# Change to the scene
-		get_tree().change_scene_to_file(scene_path)
+	elif Globals.current_level == "beach":
+		print("Going to beach scene")
+		get_tree().change_scene_to_file("res://scenes/levels/beach.tscn")
+		
+	elif Globals.current_level == "coral":
+		print("Going to coral scene")
+		get_tree().change_scene_to_file("res://scenes/levels/coral.tscn")
+		
+	elif Globals.current_level == "volcano":
+		print("Going to volcano scene")
+		get_tree().change_scene_to_file("res://scenes/levels/volcano.tscn")
+		
+	elif Globals.current_level == "abyss":
+		print("Going to abyss scene")
+		get_tree().change_scene_to_file("res://scenes/levels/abyss.tscn")
+		
 	else:
 		print("Unknown level: ", current_level)
-		print("Available levels: ", level_scenes.keys())
+		print("Available levels: ice, beach, coral, volcano, abyss")
 
