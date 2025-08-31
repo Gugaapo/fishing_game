@@ -1,14 +1,67 @@
 extends Node2D
 
-@export var search_root: Node          # drag the nested scene root here
+@export var search_roots: Array[Node]
 @export var scene_path: String = "res://scenes/fishing_scene/debug_scene.tscn"
 
-func _ready():
-	var root := search_root if search_root else self
-	var button := root.find_child("SailButton", true, false) as BaseButton
-	if button:
-		button.pressed.connect(func(): _on_ui_button_pressed(scene_path))
+var eventNames: Array[String] = [
+	"The Downwind",
+	"The Payment",
+	"The Shoal",
+	"The Storm",
+	"The Strong Tide",
+	"The Treasure"
+]
 
-func _on_ui_button_pressed(scene_path: String) -> void:
-	print("Loading:", scene_path)
+var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+
+func _ready():
+	rng.randomize()
+
+	var pool: Array[String] = eventNames.duplicate()
+	pool.shuffle()
+
+	var count: int = min(search_roots.size(), pool.size())
+	for i in range(count):
+		var root: Node = search_roots[i] if search_roots[i] else self
+		var event_name: String = pool[i]
+		_assign_event_to_root(root, event_name)
+
+	if search_roots.size() > pool.size():
+		push_warning("More roots than available events; extra roots were not assigned.")
+
+func _assign_event_to_root(root: Node, event_name: String) -> void:
+	# 1) Immediately fill the UI under this root
+	var panel: EventPanel = _find_event_panel(root)
+	if panel:
+		var ok := panel.show_event(event_name)
+		if not ok:
+			push_warning("Panel under %s could not show event '%s'." % [root.name, event_name])
+	else:
+		push_warning("EventPanel not found under %s" % root.name)
+
+	# 2) (Optional) Also hook the SailButton to change scene using this assigned event
+	var button: BaseButton = root.find_child("SailButton", true, false) as BaseButton
+	if button:
+		if not button.pressed.is_connected(Callable(self, "_on_sail_button_pressed")):
+			# capture event_name for this specific root
+			button.pressed.connect(func():
+				Globals.current_event = event_name
+				_on_sail_button_pressed()
+			)
+	else:
+		push_warning("SailButton not found under %s" % root.name)
+
+func _find_event_panel(n: Node) -> EventPanel:
+	# Depth-first search for a node of type EventPanel inside 'n'
+	var p: EventPanel = n as EventPanel
+	if p: 
+		return p
+	for child in n.get_children():
+		var found := _find_event_panel(child)
+		if found:
+			return found
+	return null
+
+func _on_sail_button_pressed() -> void:
+	print("Loading:", scene_path, " | Event:", Globals.current_event)
 	get_tree().change_scene_to_file(scene_path)

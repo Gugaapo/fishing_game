@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EventData" load_steps=3 format=3 uid="uid://divf2bwo61dfy"]
+
+[ext_resource type="Script" path="res://scripts/event_scripts/EventData.gd" id="1_5k43h"]
+[ext_resource type="Texture2D" uid="uid://xgjjoufck1rp" path="res://assets/sprites/eventos/Shoal.png" id="1_8sc1c"]
+
+[resource]
+script = ExtResource("1_5k43h")
+name = "The Shoal"
+description = "The sea ripples with silver scales.
+A massive school of fish crosses your path."
+tip = "- More fish!!!!"
+image = ExtResource("1_8sc1c")

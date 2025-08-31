@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EventData" load_steps=3 format=3 uid="uid://bia3pnyv87hg4"]
+
+[ext_resource type="Texture2D" uid="uid://dkr1kn5p3ckbl" path="res://assets/sprites/eventos/Payment.png" id="1_nam47"]
+[ext_resource type="Script" path="res://scripts/event_scripts/EventData.gd" id="1_u8dw5"]
+
+[resource]
+script = ExtResource("1_u8dw5")
+name = "The Payment"
+description = "A gruff sailor demands his due.
+The sea is not cheap for those who linger."
+tip = "- Lose money"
+image = ExtResource("1_nam47")

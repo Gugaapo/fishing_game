@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EventData" load_steps=3 format=3 uid="uid://drun5wi2n1lda"]
+
+[ext_resource type="Texture2D" uid="uid://c7uol2thqn81n" path="res://assets/sprites/eventos/Treasure.png" id="1_6dvrc"]
+[ext_resource type="Script" path="res://scripts/event_scripts/EventData.gd" id="1_edf0e"]
+
+[resource]
+script = ExtResource("1_edf0e")
+name = "The Treasure"
+description = "A chest bobs on the waves.
+Golden glimmers beckon you closer."
+tip = "- Risk the waves for rare loot"
+image = ExtResource("1_6dvrc")

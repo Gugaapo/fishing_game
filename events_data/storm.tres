@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EventData" load_steps=3 format=3 uid="uid://c5dyrmxknppgg"]
+
+[ext_resource type="Script" path="res://scripts/event_scripts/EventData.gd" id="1_66ah6"]
+[ext_resource type="Texture2D" uid="uid://ce6qd4nyt75xd" path="res://assets/sprites/eventos/Storm.png" id="1_78m8s"]
+
+[resource]
+script = ExtResource("1_66ah6")
+name = "The Storm"
+description = "Dark clouds rumble overhead.
+Winds howl and the sea churns violently."
+tip = "- Visibility drops sharply"
+image = ExtResource("1_78m8s")

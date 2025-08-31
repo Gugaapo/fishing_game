@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://eji6itgxjv8m"]
+[gd_scene load_steps=13 format=3 uid="uid://eji6itgxjv8m"]
 
 [ext_resource type="Texture2D" uid="uid://bqkhs3315fnkt" path="res://assets/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_BookPageLeft01a.png" id="1_8eaxj"]
+[ext_resource type="Script" path="res://scripts/event_scripts/EventSelectionNode.gd" id="1_bwcu8"]
 [ext_resource type="Texture2D" uid="uid://b8a36i4jg4fhj" path="res://assets/Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Slot01a.png" id="2_0xfm7"]
 [ext_resource type="Texture2D" uid="uid://dxcfxil06gg0u" path="res://assets/fantasy_pixelart_ui/sliders/silver_slider_filled.png" id="3_1dede"]
 [ext_resource type="FontFile" uid="uid://clkjta5vgibng" path="res://assets/fonts/Terminal-Grotesque-master/terminal-grotesque.ttf" id="3_hrxv2"]
@@ -19,6 +20,11 @@ texture = ExtResource("5_v18j5")
 [node name="Root" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_bwcu8")
+title_path = NodePath("TitleImage/TitleText")
+description_path = NodePath("Inner/Baseplate/Meio/InnerBackground/Event_text")
+tip_path = NodePath("Inner/Baseplate/Meio/InnerBackground/Event_explanation")
+image_path = NodePath("Inner/Baseplate/Meio/InnerBackground/Icon_frame/Icon")
 
 [node name="Inner" type="Control" parent="."]
 anchors_preset = 0

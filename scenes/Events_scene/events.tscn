@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://scripts/event_scripts/events.gd" id="1_qsv4e"]
 [ext_resource type="PackedScene" uid="uid://eji6itgxjv8m" path="res://scenes/Events_scene/EventSelectionNode.tscn" id="3_8x6dj"]
 
-[node name="Events" type="Node2D" node_paths=PackedStringArray("search_root")]
+[node name="Events" type="Node2D" node_paths=PackedStringArray("search_roots")]
 script = ExtResource("1_qsv4e")
-search_root = NodePath("Root")
+search_roots = [NodePath("Root"), NodePath("Root2"), NodePath("Root3")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, 0)
