@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://gu0hmsitt1aw"]
+
+[node name="Coral" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 120.0
+offset_bottom = 93.0
+text = "coral"
+
+[node name="Camera2D" type="Camera2D" parent="."]

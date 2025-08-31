@@ -10,4 +10,5 @@ func _ready():
 	catch_chance = 0.3  # Espadim fish have 50% catch chance (harder to catch)
 	flee_duration = 2.0  # Espadim fish fade out in 4 seconds (slower, more dramatic)
 	
+	
 	super._ready()

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dbkfj3hecotsf"]
+
+[node name="Volcano" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 95.0
+offset_bottom = 63.0
+text = "volcano"
+
+[node name="Camera2D" type="Camera2D" parent="."]

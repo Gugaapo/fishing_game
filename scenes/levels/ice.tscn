@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bt742ue5pssp7"]
+
+[node name="Ice" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 145.0
+offset_bottom = 85.0
+text = "ice
+"
+
+[node name="Camera2D" type="Camera2D" parent="."]
