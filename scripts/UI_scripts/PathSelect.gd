@@ -22,7 +22,7 @@ func on_path3():
 
 func _load_next_scene(path_name: String):
 	# For now, just load the same scene (replace with your target scene later)
-	var scene = preload("res://scenes/guilherme-tutorial/debug_scene.tscn").instantiate()
+	var scene = preload("res://scenes/fishing_scene/debug_scene.tscn").instantiate()
 	get_tree().change_scene_to_packed(scene)
 
 	# Debug: we could also pass the choice along

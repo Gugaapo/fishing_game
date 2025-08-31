@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://c57ixg36kb8qw" path="res://assets/gradients/gradient.png" id="6_2m4ej"]
 [ext_resource type="PackedScene" uid="uid://lpitcdo7x83b" path="res://scenes/fishing_scene/fishes/fish_sardine.tscn" id="7_sardine"]
 [ext_resource type="AudioStream" uid="uid://i0ajtculjn50" path="res://assets/music/Music_Theme1.wav" id="8_73ynf"]
-[ext_resource type="PackedScene" path="res://scenes/pause_menu.tscn" id="9_pause"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ttqpa"]
 distance = -11.0
@@ -201,8 +200,3 @@ texture = ExtResource("6_2m4ej")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_73ynf")
 autoplay = true
-
-[node name="PauseMenu" parent="." instance=ExtResource("9_pause")]
-layout_mode = 1
-grow_horizontal = 2
-grow_vertical = 2

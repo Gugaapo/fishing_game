@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://c21t1t84okty6"]
+
+[ext_resource type="Script" path="res://scripts/UI_scripts/money_display.gd" id="1_kebbc"]
+[ext_resource type="Texture2D" uid="uid://c6mre0hjtet54" path="res://assets/fantasy_pixelart_ui/sliders/gold_grabber_pressed.png" id="2_m63jp"]
+
+[node name="MoneyDisplay" type="Control" node_paths=PackedStringArray("moneyLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kebbc")
+moneyLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_m63jp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = -7.0
+offset_right = 88.0
+offset_bottom = 16.0
+scale = Vector2(2.2, 2.2)
+theme_override_colors/font_color = Color(0.976471, 0.819608, 0.356863, 1)
+text = "0"

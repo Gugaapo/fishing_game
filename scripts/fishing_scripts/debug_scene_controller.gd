@@ -2,9 +2,6 @@ extends Control
 
 func _ready():
 	# Set up the pause menu to know which scene it came from
-	var pause_menu = $PauseMenu
-	if pause_menu:
-		pause_menu.set_game_scene("res://scenes/fishing_scene/debug_scene.tscn")
 	
 	# Ensure this control can receive input events
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -12,7 +9,6 @@ func _ready():
 	set_process_input(true)
 	
 	print("Debug scene controller ready")
-	print("Pause menu found: ", pause_menu != null)
 	
 	# Debug scene tree structure (temporarily disabled to prevent crashes)
 	# print("Scene tree structure:")
@@ -44,14 +40,3 @@ func _input(event):
 			print("ESC action detected!")
 		else:
 			print("ESC action NOT detected for keycode: ", event.keycode)
-	
-	# Forward input events to the pause menu if it exists
-	var pause_menu = $PauseMenu
-	if pause_menu and pause_menu.has_method("_input"):
-		pause_menu._input(event)
-	
-	# Test with P key as well
-	if event is InputEventKey and event.pressed and event.keycode == KEY_P:
-		print("P key pressed in debug scene controller")
-		if pause_menu:
-			pause_menu._input(event)

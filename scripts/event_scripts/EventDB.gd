@@ -54,11 +54,11 @@ func _load_events() -> void:
 	if count > 0:
 		print("EventDB keys:", events.keys())
 
-func get_event(name: String) -> EventData:
+func get_event(event_name: String) -> EventData:
 	_ensure_loaded()
-	if events.has(name):
-		return events[name]
-	var lc := name.to_lower()
+	if events.has(event_name):
+		return events[event_name]
+	var lc := event_name.to_lower()
 	if _name_lut.has(lc):
 		return events[_name_lut[lc]]
 	return null

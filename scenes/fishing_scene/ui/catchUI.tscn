@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://draq76bcaspjl"]
 
-[ext_resource type="Script" path="res://scripts/UI_scricpts/catch_labels.gd" id="1_3boon"]
+[ext_resource type="Script" path="res://scripts/UI_scripts/catch_labels.gd" id="1_3boon"]
 [ext_resource type="FontFile" uid="uid://bkww1rwwspsr3" path="res://assets/fonts/Terminal-Grotesque-master/terminal-grotesque_open.otf" id="1_50vyl"]
 
 [node name="CatchUI" type="Control"]

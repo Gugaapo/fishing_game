@@ -36,13 +36,11 @@ This project now includes a complete menu system for the fishing game.
 - `Events_scene/events.tscn`: Events selection scene
 - `fishing_scene/debug_scene.tscn`: Debug fishing scene
 - `settings.tscn`: Settings configuration screen
-- `pause_menu.tscn`: In-game pause menu
 
 ## Scripts
 
 - `scripts/menu_scripts/main_menu.gd`: Main menu controller
 - `scripts/menu_scripts/settings.gd`: Settings menu controller
-- `scripts/menu_scripts/pause_menu.gd`: Pause menu controller
 - `scripts/game_controller.gd`: Main game scene controller
 - `scripts/fishing_scripts/debug_scene_controller.gd`: Debug scene controller
 

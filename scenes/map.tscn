@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmhhcw7wjro4l"]
+
+[ext_resource type="Script" path="res://scenes/map_controller.gd" id="1_0j483"]
+[ext_resource type="Texture2D" uid="uid://bi2l766vg2mml" path="res://assets/sprites/mapa.png" id="1_fu6xe"]
+[ext_resource type="Texture2D" uid="uid://bbh4ryk1mi3u6" path="res://assets/sprites/barco-grande.png" id="2_33n60"]
+[ext_resource type="PackedScene" uid="uid://c21t1t84okty6" path="res://scenes/UI_scenes/money_display.tscn" id="4_1n1qu"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_0j483")
+boat_positions = Array[Vector2]([Vector2(-403, 200), Vector2(-375, -268), Vector2(412, -258), Vector2(-13, 260), Vector2(492, 216)])
+
+[node name="map_sprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1.17842, 0.499983)
+scale = Vector2(1.11552, 1.11552)
+texture = ExtResource("1_fu6xe")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="boat" type="Sprite2D" parent="."]
+position = Vector2(492, 216)
+scale = Vector2(0.289792, 0.289792)
+texture = ExtResource("2_33n60")
+
+[node name="Interface" type="Control" parent="."]
+z_index = -1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Interface"]
+layout_mode = 0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 301.0
+scale = Vector2(1, 1.03744)
+texture = ExtResource("1_fu6xe")
+
+[node name="TutorialButton" type="Button" parent="Interface/TextureRect"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 409.0
+offset_right = 271.0
+offset_bottom = 625.0
+flat = true
+
+[node name="IceButton" type="Button" parent="Interface/TextureRect"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 418.0
+offset_bottom = 213.0
+flat = true
+
+[node name="HeatButton" type="Button" parent="Interface/TextureRect"]
+layout_mode = 0
+offset_left = 798.0
+offset_top = -2.0
+offset_right = 1152.0
+offset_bottom = 176.0
+flat = true
+
+[node name="CoraisButton" type="Button" parent="Interface/TextureRect"]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 336.0
+offset_right = 664.0
+offset_bottom = 542.0
+flat = true
+
+[node name="AbyssButton" type="Button" parent="Interface/TextureRect"]
+layout_mode = 0
+offset_left = 917.0
+offset_top = 332.0
+offset_right = 1153.0
+offset_bottom = 624.0
+flat = true
+
+[node name="MoneyDisplay" parent="." instance=ExtResource("4_1n1qu")]
+offset_left = -562.0
+offset_top = -314.0
+offset_right = -562.0
+offset_bottom = -314.0
